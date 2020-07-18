@@ -9,7 +9,6 @@
 
 .container {
     background-color:#efefef;
-    border-bottom:2px solid #a1a1a1;
     padding:1em;
 }
 
@@ -26,6 +25,9 @@
     margin-right:auto;
     cursor:pointer;
     text-align:end;
+    :hover {
+        opacity:0.5;
+    }
 }
 
 .rating {

@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row movie-details-view">
-        <app-movie-details *ngIf="openDetailsView"></app-movie-details>
+    <div  *ngIf="openDetailsView" class="row movie-details-view">
+        <app-movie-details></app-movie-details>
     </div>
     <div *ngFor="let g of genres" class="row">
         <div class="wrapper" id={{g}}>
