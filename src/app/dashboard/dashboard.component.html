@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row movie-details-view">
+        <app-movie-details *ngIf="openDetailsView"></app-movie-details>
+    </div>
+    <div *ngFor="let g of genres" class="row">
+        <div class="wrapper" id={{g}}>
+            <h2>{{g}}</h2>
+            <div class="genre-film-scrollbox">
+                <div *ngFor="let m of filterByGenre(g); let i = index;" class="card" [routerLink]="['/dashboard/']" [queryParams]="searchQuery!=null ? {q:[searchQuery], id:[m.id]} : {id:[m.id]}">
+                    <img src={{m.backdrop}} class="movie-backdrop">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

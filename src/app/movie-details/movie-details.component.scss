@@ -1,0 +1,38 @@
+.details-wrapper {
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    margin-left:auto;
+    margin-right:auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.container {
+    background-color:#efefef;
+    border-bottom:2px solid #a1a1a1;
+    padding:1em;
+}
+
+.poster{
+    margin-left:auto;
+    margin-right:auto;
+    img {
+        max-height: 20rem;
+    }
+}
+
+.view-controls {
+    margin-left:auto;
+    margin-right:auto;
+    cursor:pointer;
+    text-align:end;
+}
+
+.rating {
+    float:right;
+}
+
+.row {
+    margin-left:auto;
+    margin-right:auto;
+}

@@ -1,0 +1,10 @@
+<div class="form">
+  <form #f='ngForm' (ngSubmit)="formSubmit(f)">
+    <div class="form-group">
+      <i class="material-icons search-icon">
+        search
+      </i>
+      <input type="text" class="form-control" id="searchQuery" [(ngModel)]="searchQuery" name="searchQuery" placeholder="Hit enter to search...">
+    </div>
+  </form>
+</div>

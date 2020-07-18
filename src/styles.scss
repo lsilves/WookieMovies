@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~material-design-icons/iconfont/material-icons.css';
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+.container {
+    max-width:100% !important;
+}
+
+body {
+    background-color: #efefef;
+}

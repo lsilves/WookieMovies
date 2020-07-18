@@ -1,0 +1,39 @@
+
+<div class="container" *ngIf="title != null && showDetailsView">
+    <div class="row">
+        
+        <!--Poster-->
+        <div class="col-sm-3">
+            <div class="poster">
+                <img src={{poster}}  class="poster-img">
+            </div>
+        </div>
+
+        <!--Details-->
+        <div class="col-sm-7">
+            <div class="details">
+                <span class="rating">
+                    <i class="material-icons" *ngFor="let r of rating_stars">{{r}}</i>
+                </span>
+                <h2>{{title}} ({{rating}})</h2> 
+                <h4>
+                    {{date | date: 'yyyy'}} | {{length}} | {{director}}<br />
+                    Cast: {{cast}}
+                </h4>
+                <p>
+                    Movie Description: {{description}}
+                </p>
+            </div>
+        </div>
+
+        <!--Close View-->
+        <div class="col-sm-2">
+            <div class="view-controls" (click)="closeView()" [queryParams]="searchQuery!=null ? {q:[searchQuery]} : ''" [routerLink]="['/dashboard/']">
+                <i class="material-icons" *ngIf="showDetailsView">
+                    close
+                </i>
+            </div>
+        </div>
+
+    </div>
+</div>

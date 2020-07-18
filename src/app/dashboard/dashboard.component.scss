@@ -1,0 +1,37 @@
+.movie-backdrop {
+    max-width: 25rem;
+}
+
+.row{
+  padding-left:1.5em;
+  padding-right:1.5em;
+  .wrapper {
+    max-width:100vw !important;
+    overflow-x:auto;
+    margin-top:2.5em;
+    .genre-film-scrollbox {
+      overflow-x: auto;
+      display: flex;
+      flex-wrap:nowrap;
+      .card {
+        flex: 0 0 auto;
+        cursor:pointer;
+      }
+    }
+  }
+}
+
+.movie-details-view {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.movies-list{
+  margin-top:4vh;
+}
+
+.container {
+  margin-bottom:2.5em;
+}

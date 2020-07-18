@@ -1,0 +1,13 @@
+.form {
+    max-width:250px;
+    .form-group{
+        display:flex;
+        flex-wrap:nowrap;
+        search-icon {
+            float:right;
+        }
+    }
+    i {
+        font-size:2.5em;
+    }
+}
