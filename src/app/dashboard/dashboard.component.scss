@@ -1,5 +1,6 @@
 .movie-backdrop {
-    max-width: 25rem;
+    max-width: 20rem;
+
 }
 
 .row{
@@ -16,6 +17,9 @@
       .card {
         flex: 0 0 auto;
         cursor:pointer;
+        :hover {
+          opacity:0.5;
+        }
       }
     }
   }
