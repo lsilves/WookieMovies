@@ -17,6 +17,7 @@
       .card {
         flex: 0 0 auto;
         cursor:pointer;
+        margin:.5em;
         :hover {
           opacity:0.5;
         }
@@ -39,4 +40,11 @@
 
 .container {
   margin-bottom:2.5em;
+}
+
+.scroll-to-top{
+  text-decoration:underline;
+  :hover{
+    opacity:0.5;
+  }
 }
