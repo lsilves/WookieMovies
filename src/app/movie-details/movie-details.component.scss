@@ -47,3 +47,20 @@
          }
      }   
 }
+
+@media only screen and (max-width: 725px) {
+    .poster {
+        img {
+            max-height:10rem;
+        }
+    }   
+}
+
+@media only screen and (max-width: 575px) {
+    .poster {
+        text-align:center;
+        img {
+            max-height:25rem;
+        }
+    }   
+}
