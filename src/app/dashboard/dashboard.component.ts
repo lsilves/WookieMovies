@@ -13,13 +13,14 @@ export class DashboardComponent implements OnInit {
   public movies: any; // list of movies
   public openDetailsView = false; // determines if movie detail view on/off
   public genres = []; // list of genres
-  private querySub: any; // API subscription
+  private querySub: any; // route subscription
+  private movieSub: any; // API subscription
   public searchQuery: String; // search query
 
   constructor(private data: MovieDataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(queryParams => { // subscribe to URL parameters
+    this.querySub = this.route.queryParams.subscribe(queryParams => { // subscribe to URL parameters
       this.openDetailsView = (queryParams.id) ? true : false;
       this.searchQuery = (queryParams.q ? queryParams.q : null);
       this.getPage(this.searchQuery);
@@ -29,7 +30,7 @@ export class DashboardComponent implements OnInit {
   /* Get page of movies */
   getPage(_searchQuery){
     if(_searchQuery == null){ // no search query
-      this.data.getAllMovies().subscribe(data =>{
+      this.movieSub = this.data.getAllMovies().subscribe(data =>{
         if(data != null){
           this.movies = data.movies;
           this.getGenres();
@@ -37,7 +38,7 @@ export class DashboardComponent implements OnInit {
       });
     }
     else{ // filter by search query
-      this.querySub = this.data.searchMovies(_searchQuery).subscribe(data => {
+      this.movieSub = this.data.searchMovies(_searchQuery).subscribe(data => {
         if(data != null){
           this.movies = data.movies;
           this.getGenres();
@@ -60,6 +61,11 @@ export class DashboardComponent implements OnInit {
   /* Filter by genre */
   filterByGenre(genre){
     return this.movies.filter(m => m.genres.indexOf(genre) != -1);
+  }
+
+  ngOnDestroy() {
+    this.querySub.unsubscribe();
+    this.movieSub.unsubscribe();
   }
 
 }

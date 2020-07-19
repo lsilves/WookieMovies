@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieDataService } from '../movie-data.service';
 import { NgForm } from "@angular/forms";
 import { Router } from '@angular/router';
 
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
 export class SearchBarComponent implements OnInit {
   public searchQuery: String; // search query
 
-  constructor(private data: MovieDataService, private route: Router) { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
